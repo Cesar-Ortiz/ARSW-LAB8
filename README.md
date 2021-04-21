@@ -92,7 +92,30 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 
 2. ¿Brevemente describa para qué sirve cada recurso?
+
+**Virtual network:** Es una representación de su propia red en la nube. Es un aislamiento lógico de la nube de Azure dedicada a su suscripción. 
+
+**Load Balancer:** El equilibrio de carga se refiere a distribuir uniformemente la carga (tráfico de red entrante) en un grupo de servidores o recursos de back-end.
+
+**Public IP address:** Las direcciones IP públicas permiten que los recursos de Internet se comuniquen de forma entrante a los recursos de Azure. Las direcciones IP públicas 
+permiten que los recursos de Azure se comuniquen con Internet y los servicios públicos de Azure.
+
+**Virtual machine:** Es lo que Azure ofrece para alojar la aplicación sin hardware fisico.
+
+**Netowork seguryty group:** Para filtrar el tráfico de red hacia y desde los recursos de Azure en una red virtual de Azure. Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante o el tráfico de red saliente de varios tipos de recursos de Azure. 
+
+**Network interface:** Es una interconexión entre una máquina virtual y la red de software subyacente.
+
+**Disk:** Permiten en almacenamiento de la máquina virtual Azure.
+
+**SSH Key:** Es la que permite que solo el usuario con la llave pueda ingresar a la máquina.
+
+
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+    
+    - Al no utilizar el comando 'forever' hace que el script se ejecute de forma continua. Haciendo que cuando se cierre la conexión SSH, este script se deje de ejecutar.
+    - Para que tenga acceso al público desde el puerto señalado.
+
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 
 Sin escalamiento
