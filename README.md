@@ -160,6 +160,9 @@ Con escalamiento
 
 
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+	- El disco B1ls tiene de memoria 0.5 GiB y la B2ms tiene 8 GiB, esto permite que el almacenamiento interno sea mayor, el rendimiento de la CPU del disco B2ms es el doble al del disco B1ls. Las mejoras del disco B2ms son mayores y eso se ve reflejado en el consumo de créditos consumidos en comparación a la B1ls.
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
 
 	- Al tener mas capacidad mejora considerablente la ejecución de la aplicación y hace que las respuestas esten listas en un menor tiempo. 
