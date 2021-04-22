@@ -167,7 +167,7 @@ Con escalamiento
 
 11. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
 
-	- Si
+	- 
 	
 12. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
 
@@ -258,12 +258,36 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+
+	- **Balanceador de carga interno:** 
+		- Equilibre la carga del tráfico entrante de Internet a las máquinas virtuales
+		- puede acceder a un servidor front-end de Load Balancer desde una red local en un escenario híbrido.
+		- Reenviar el tráfico a un puerto específico de máquinas virtuales determinadas con reglas de traducción de direcciones de red (NAT) de entrada
+		- Proporcionar conectividad de salida para máquinas virtuales dentro de la red virtual mediante un equilibrador de carga público
+	- **SKU**: Se puede decir que es el número de referencia de un producto; un sistema de identificación esencial para poder realizar cualquier tipo de inventario ya sea físico o financiero y sus tipos son:
+		-  **Basico:**  El almacenamiento incluido y el rendimiento de las imágenes son más adecuadas para escenarios de uso inferior.
+		-  **Estandar:** Contiene más almacenamiento y un mayor rendimiento de las imágenes.
+		-  **Premium:** Proporcionan la mayor cantidad de almacenamiento incluido y operaciones simultáneas, por lo que permiten trabajar con escenarios de mayor volumen. Además de la mayor capacidad de rendimiento de las imágenes, el nivel Premium agrega características tales como replicación geográfica para la administración de un único registro en varias regiones, confianza del contenido para la firma de etiquetas de imagen, y vínculo privado con puntos de conexión privados para restringir el acceso al Registro.
+	- **Balanceador de carga con IP pública:** Permite que el sitio web que administremos esté siempre disponible, y sea capaz de servir todas las peticiones a la máxima velocidad posible, al ser una ip pública permite que cualquier usuario se puede conectar a esta.
 * ¿Cuál es el propósito del *Backend Pool*?
+
+	- El grupo de backend es un componente crítico del balanceador de carga. El grupo de backend define el grupo de recursos que brindarán tráfico para una regla de equilibrio de carga determinada.
+
 * ¿Cuál es el propósito del *Health Probe*?
+	- Determina que instancias del grupo de backend recibirán nuevos flujos. Puede usar Health Probe para detectar la falla de una aplicación en un endpoint de backend. 
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+	- Puede escalar sus aplicaciones y crear servicios de alta disponibilidad. El equilibrador de carga admite escenarios entrantes y salientes. El equilibrador de carga proporciona baja latencia y alto rendimiento, y escala hasta millones de flujos para todas las aplicaciones TCP y UDP.
+	- 
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+	-  **Virtual Network:** Es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales. VNet es similar a una red tradicional que funcionaría en su propio centro de datos, pero aporta las ventajas adicionales de la infraestructura de Azure, como la escala, la disponibilidad y el aislamiento.
+	-  **Subnet:** Permite designar una subred concreta para el servicio PaaS de Azure que se prefiera e insertarla en una red virtual. La delegación de subred proporciona al cliente control total al cliente de la administración de la integración de los servicios de Azure en sus redes virtuales.
+	-  **address space:** Asigna a los recursos de una red virtual una dirección IP privada desde el espacio de direcciones que usted asigna.
+	-  **address range:** Proporciona un rango contiguo de direcciones a su suscripción según la cantidad que especifique
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+	- Cada región tiene varias ubicaciones aisladas conocidas como zonas de disponibilidad. Cuando lanza una instancia, puede seleccionar una zona de disponibilidad. Si distribuye las instancias entre varias zonas de disponibilidad y una de las 3 instancias genera un error, puede diseñar la aplicación de forma que una instancia en otra zona de disponibilidad pueda gestionar las solicitudes.
+	- Los servicios de zone-redundant replican sus aplicaciones y datos a través de las zonas de disponibilidad para protegerlos de los puntos únicos de fallo. Con las zonas de disponibilidad, Azure ofrece el mejor acuerdo de nivel de servicio (SLA) del sector con un 99,99% de tiempo de actividad de las máquinas. El SLA completo de Azure explica la disponibilidad garantizada de Azure en su conjunto. Las puertas de enlace de zone-redundant y las puertas de enlace de zona se basan en el recurso de IP pública de Azure SKU estándar. La configuración del recurso de IP pública de Azure determina si la puerta de enlace que implementa es redundante por zonas o zonal.
 * ¿Cuál es el propósito del *Network Security Group*?
+	- Puede usar un grupo de seguridad de red de Azure para filtrar el tráfico de red hacia y desde los recursos de Azure en una red virtual de Azure. Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante o el tráfico de red saliente de varios tipos de recursos de Azure. 
 * Informe de newman 1 (Punto 2)
 * Presente el Diagrama de Despliegue de la solución.
 
