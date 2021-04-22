@@ -88,7 +88,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
 
 
-![](images/Captura21(2).jpeg)
+![](images/Captura22.jpeg)
 
 
 2. ¿Brevemente describa para qué sirve cada recurso?
@@ -150,7 +150,7 @@ Con escalamiento
 Sin escalamiento
 
 
-![](images/Captura21 (1).jpeg)
+![](images/Captura21.jpeg)
 
 
 Con escalamiento
